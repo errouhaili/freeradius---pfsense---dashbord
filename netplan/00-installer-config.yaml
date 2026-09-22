@@ -1,0 +1,17 @@
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    ens33:
+      addresses:
+      - 192.168.0.20/24
+      dhcp6: true
+      match:
+        macaddress: 00:0c:29:3d:75:37
+      nameservers:
+        addresses: []
+        search: []
+      routes:
+      - to: default
+        via: 192.168.0.200
+      set-name: ens33
+  version: 2

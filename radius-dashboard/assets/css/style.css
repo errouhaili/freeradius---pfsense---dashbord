@@ -1,0 +1,62 @@
+:root {
+  --brand: #1b6ec2;
+  --brand-dark: #124a86;
+  --sidebar-w: 240px;
+}
+body {
+  background: #f4f6f9;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+.topbar {
+  background: linear-gradient(90deg, var(--brand-dark), var(--brand));
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+.app-wrapper { display: flex; min-height: calc(100vh - 56px); }
+.app-sidebar {
+  width: var(--sidebar-w);
+  background: #10233f;
+  color: #fff;
+  flex-shrink: 0;
+  padding-top: 1rem;
+}
+.app-sidebar .nav-link {
+  color: #c9d6e8;
+  padding: .75rem 1.25rem;
+  border-right: 3px solid transparent;
+}
+.app-sidebar .nav-link:hover { background: rgba(255,255,255,.06); color: #fff; }
+.app-sidebar .nav-link.active {
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border-right-color: var(--brand);
+  font-weight: 600;
+}
+.app-content { flex: 1; width: calc(100% - var(--sidebar-w)); }
+
+.stat-card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  color: #fff;
+  overflow: hidden;
+}
+.stat-card .icon { font-size: 2rem; opacity: .85; }
+.bg-users { background: linear-gradient(135deg,#1b6ec2,#2ea3f2); }
+.bg-active { background: linear-gradient(135deg,#1e9e6c,#3ec98c); }
+.bg-nas { background: linear-gradient(135deg,#a2632f,#e59a4d); }
+.bg-data { background: linear-gradient(135deg,#7a3ec9,#a768f0); }
+
+.card { border: none; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+.login-wrapper {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg,#10233f,#1b6ec2);
+}
+.login-card { width: 100%; max-width: 380px; border-radius: 16px; }
+.badge-active { background: #1e9e6c; }
+.badge-expired { background: #c0392b; }
+
+@media (max-width: 991.98px) {
+  .app-sidebar { position: fixed; right: -260px; top: 56px; bottom: 0; z-index: 1030; transition: right .2s; }
+  .app-sidebar.show { right: 0; }
+  .app-content { width: 100%; }
+}
