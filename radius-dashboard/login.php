@@ -11,8 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     csrf_check();
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
-    if (attempt_login($username, $password)) {
+    $result = attempt_login($username, $password);
+    if ($result === 'ok') {
         header('Location: dashboard.php');
+        exit;
+    } elseif ($result === 'need_2fa') {
+        header('Location: login_2fa.php');
         exit;
     } else {
         $error = t('login_error');

@@ -24,5 +24,9 @@
       <a class="nav-link <?= $current_page=='nas.php'?'active':'' ?>" href="nas.php">
         <i class="fa fa-server me-2"></i><?= t('nav_nas') ?></a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link <?= $current_page=='settings_2fa.php'?'active':'' ?>" href="settings_2fa.php">
+        <i class="fa fa-lock me-2"></i><?= t('nav_2fa_settings') ?></a>
+    </li>
   </ul>
 </aside>
